@@ -3,16 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina Inicial</title>
+    <title>Cadastro HTML</title>
     <link rel="stylesheet" href="CSS/index.css">
 </head>
 <body>
+<?php
+include ('conexao.php');
+if(isset($_POST['nome']) && isset($_POST['preco']) && isset($_FILES['imagem'])){
+    if(isset($_FILES['imagem']) && !empty($_FILES['imagem'])){
+
+        $imagem= "./img/".$_FILES['imagem']['name'];
+        move_uploaded_file($_FILES['imagem']['tmp_name'],$imagem);
+        $nome=$_POST['nome'];
+        $preco=$_POST['preco'];
+        $query="INSERT INTO produto(nome_produto,preco_produto,imagem) VALUES('$nome','$preco','$imagem')";
+        if(mysqli_query($conexao,$query)){
+            echo "Produto Cadastrado";
+        }else{
+            echo "Erro".mysqli_error($conexao);
+        }
+    }else{
+        echo "<h2> PREENCHA TODAS AS INFORMAÇÕES</h2>";
+    }
+}
+
+
+
+?>
     <header>
         <div id="cabeçalho">
             <ul>
-                <div id="logo">
-                <img src="img/logo_mig_supermarket.jpg" alt="">
-                </div>
                 <h2>MIG SUPERMARKET</h2>
                 <li><a href="">Inicio</a></li>
                 <li><a href="">Sobre</a></li>
@@ -35,5 +55,15 @@
             </ul>
         </div>
     </header>
+
+    <form action="" method="post" enctype="multipart/form-data">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome">
+        <label for="preco">Preço</label>
+        <input type="text" name="preco" placeholder="00.00">
+        <label for="imagem">Imagem</label>
+        <input type="file" name="imagem" accept="image/*">
+        <input type="submit" name="cadastrar" value="CADASTRAR">
+    </form>
 </body>
 </html>

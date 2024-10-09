@@ -3,16 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina Inicial</title>
+    <title>Consulta Produto PHP</title>
     <link rel="stylesheet" href="CSS/index.css">
 </head>
 <body>
     <header>
         <div id="cabeçalho">
             <ul>
-                <div id="logo">
-                <img src="img/logo_mig_supermarket.jpg" alt="">
-                </div>
                 <h2>MIG SUPERMARKET</h2>
                 <li><a href="">Inicio</a></li>
                 <li><a href="">Sobre</a></li>
@@ -25,7 +22,7 @@
                             <li><a href="">Consultar Cliente</a></li>
                             <li><a href="">Alterar informações de Cliente</a></li>
                             <li><a href="">Excluir Cliente</a></li>
-                            <li><a href="consultar_produto.html">Consultar Produto</a></li>
+                            <li><a href="">Consultar Produto</a></li>
                             <li><a href="">Alterar Produto</a></li>
                             <li><a href="">Exclusão de Produto</a></li>
                             <li><a href="cadastro_produto.php">Cadastro de Produto</a></li>
@@ -35,5 +32,29 @@
             </ul>
         </div>
     </header>
+
+    <?php
+    include ("conexao.php");
+    $nome=$_POST['nome'];
+    $query="SELECT * FROM produto WHERE nome_produto LIKE '%$nome%'";
+    $resultado=mysqli_query($conexao,$query);
+    if(mysqli_query($conexao,$query)){
+        while($row_produto=mysqli_fetch_assoc($resultado)){
+            if(empty($nome)){
+                echo "Insira o nome do Produto";
+                echo "<a href=consultar_produto.html> Voltar a Consulta </a>";
+            }else{
+                echo "<table border ='1'>";
+
+                echo "<td>$row_produto[codigo_produto]</td>";
+                echo "<td>$row_produto[nome_produto]</td>";
+                echo "<td>R$$row_produto[preco_produto]</td>";
+                echo "<td><img src='$row_produto[imagem]' width='75' height='75'</td>";
+    
+                echo "</table>";
+            }
+        }
+    }
+    ?>
 </body>
 </html>
