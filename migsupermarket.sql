@@ -13,6 +13,7 @@ primary key(codigo)
 create table produto(
 codigo_produto int not null auto_increment,
 nome_produto varchar(100),
-preco_produto double(
+preco_produto decimal(10,2),
+primary key(codigo_produto)
 )
 
