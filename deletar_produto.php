@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina Inicial</title>
+    <title>Deletar Produto HTML</title>
     <link rel="stylesheet" href="CSS/index.css">
 </head>
 <body>
@@ -36,5 +36,32 @@
             </ul>
         </div>
     </header>
+    <form action="" method="post">
+        <label for="codigo">Insira o Código do Produto</label>
+        <input type="text" name="codigo" placeholder="0">
+        <input type="submit" name="submit" placeholder="Enviar">
+    </form>
+    
+    <?php
+    include ("conexao.php");
+    if(!empty($_POST['codigo'])){
+        if(isset($_POST['codigo'])){
+            $codigo=$_POST['codigo'];
+        }
+        $query="DELETE FROM produto WHERE codigo_produto=($codigo)";
+        if(empty($codigo)){
+            echo "Insira o Código do Produto";
+            }else{
+            if(mysqli_query($conexao,$query)){
+                echo "<h2> Produto Excluido com Sucesso";
+            }else{
+                echo "Erro".mysqli_error($conexao);
+            }
+        }
+    }
+
+
+    ?>
+
 </body>
 </html>

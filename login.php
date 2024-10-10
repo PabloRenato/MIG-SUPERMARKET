@@ -36,5 +36,39 @@
             </ul>
         </div>
     </header>
+    <?php
+        include("conexao.php");
+
+        if(isset($_POST["email"])){
+            $email=$_POST["email"];
+            $senha=$_POST["senha"];
+            $login="SELECT * FROM usuario WHERE email = '{$email}' AND senha = '{$senha}' ";
+            $acesso=mysqli_query($conexao,$login);
+            if(!$acesso){
+                echo "<h2>Falha de Login</h2>";
+            }
+            $informacao=mysqli_fetch_assoc($acesso);
+            if(empty($informacao)){
+                echo"Login Sem Conexão";
+            }else{
+                header("location:index.html");
+            }
+        }
+    
+
+        
+        
+
+    ?>
+
+    <h1>LOGIN</h1>
+    <form action="" method="post">
+        <label for="email">Email</label>
+        <input type="email" name="email">
+        <label for="senha">Senha</label>
+        <input type="password" name="senha">
+        <input type="submit" name="submit" value="ENTRAR"><br>
+        <button><a href="cadastro_usuario.php">Criar uma conta</a></button>
+    </form>
 </body>
 </html>

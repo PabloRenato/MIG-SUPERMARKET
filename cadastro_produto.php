@@ -34,9 +34,9 @@ if(isset($_POST['nome']) && isset($_POST['preco']) && isset($_FILES['imagem'])){
         <div id="cabeçalho">
             <ul>
                 <div id="logo">
-                <img src="img/logo_mig_supermarket.jpg" alt="">
-                </div>
+                <img src="img/logo_mig_supermarket.jpg" alt="">                
                 <h2>MIG SUPERMARKET</h2>
+                </div>
                 <div id="menu">
                     <li><a href="">Inicio</a></li>
                     <li><a href="">Sobre</a></li>
@@ -51,7 +51,7 @@ if(isset($_POST['nome']) && isset($_POST['preco']) && isset($_FILES['imagem'])){
                                 <li><a href="">Excluir Cliente</a></li>
                                 <li><a href="consultar_produto.html">Consultar Produto</a></li>
                                 <li><a href="">Alterar Produto</a></li>
-                                <li><a href="">Exclusão de Produto</a></li>
+                                <li><a href="deletar_produto.php">Exclusão de Produto</a></li>
                                 <li><a href="cadastro_produto.php">Cadastro de Produto</a></li>
                             </ul> 
                             </div>                                       

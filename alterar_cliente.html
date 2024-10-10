@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina Inicial</title>
+    <title>Alterar Informações do Cliente HTML</title>
     <link rel="stylesheet" href="CSS/index.css">
 </head>
 <body>
@@ -36,5 +36,11 @@
             </ul>
         </div>
     </header>
+    <h1>ALTERAR INFORMAÇÕES DO CLIENTE</h1>
+    <form action="alterar_cliente.php" method="post">
+        <label for="codigo">Insira o Código do Cliente</label>
+        <input type="text" name="codigo" placeholder="0">
+        <input type="submit" name="submit" value="BUSCAR">
+    </form>
 </body>
 </html>
