@@ -1,3 +1,5 @@
+*{margin: 0px; padding:0px;}
+
 li{
     display: inline;
     margin: 15px;
@@ -5,10 +7,18 @@ li{
 }
 #cabeçalho{
     background-color: #d03b3b;
+    border-bottom: 5px solid #b93333;
 }
-#cabeçalho li{
+#cabeçalho ul a{
     background-color: white;
     padding: 5px;
+}
+#cabeçalho ul li a{
+    text-decoration: none;
+    border-radius: 50px;
+}
+#cabeçalho ul{
+    padding: 10px;
 }
 #logo img{
     display: inline;
@@ -19,15 +29,21 @@ li{
 h2{
     display: inline;
 }
+#menu{
+    display: inline;
+    position: fixed;
+    right: 0;
+}
 .menubtn {
     background-color: white;
     color: black;
     border: none;
     cursor: pointer;
     padding:10px;
+    border-radius: 50px;
 }
 .menubtn:hover {
-    background-color: white;
+    background-color: rgb(233, 233, 233);
     }
 .dropdown {
     position: relative;
@@ -35,12 +51,19 @@ h2{
 }
 .dropdown-child {
     display: none;
-    background-color: white;
-    min-width: 200px;
+    position:absolute;
+    border:5px solid #b93333;
+    background-color: #d03b3b;
+    border-top: 0;
+    min-width: 160px;
+    transform: translateX(-65%);
+    top: calc(100% + 2px);
 }
 .dropdown-child a {
-    color: blue;
-    border: 2px solid #d03b3b;
+    color: black;
+    font-size: 15px;
+    border: 2px solid white;
+    background-color: white;
     text-decoration: none;
     display: block;
 }
