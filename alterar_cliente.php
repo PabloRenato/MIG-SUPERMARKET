@@ -85,9 +85,9 @@
             <label for="nome">Nome:</label>
             <input type="text" value="<?php echo $info_usuario['nome']?>" name="nome"><br>
             <label for="preco">Email</label>
-            <input type="text" value="<?php echo $info_usuario['email']?>" name="preco"><br>
+            <input type="text" value="<?php echo $info_usuario['email']?>" name="email"><br>
             <label for="telefone">Telefone</label>
-            <input type="text" value="<?php echo $info_usuario['telefone']?>" name="email"><br>
+            <input type="text" value="<?php echo $info_usuario['telefone']?>" name="telefone"><br>
             <label for="senha">Senha</label>
             <input type="text" value="<?php echo $info_usuario['senha']?>" name="senha">
             <input type="hidden" value="<?php echo $info_usuario['codigo_usuario']?>" name="codigo"><br>
