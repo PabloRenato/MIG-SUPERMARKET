@@ -15,19 +15,19 @@
                 <h2>MIG SUPERMARKET</h2>
                 </div>
                 <div id="menu">
-                    <li><a href="">Inicio</a></li>
+                    <li><a href="index.html">Inicio</a></li>
                     <li><a href="">Sobre</a></li>
                     <li><a href="">Produtos</a></li>
-                    <li><a href="">Login</a></li>
+                    <li><a href="login.php">Login</a></li>
                     <li><div class="dropdown">
                         <button class="menubtn">●●●</button>
                         <div class="dropdown-child">
                             <ul>
-                                <li><a href="">Consultar Cliente</a></li>
-                                <li><a href="">Alterar informações de Cliente</a></li>
+                                <li><a href="consultar_cliente.html">Consultar Cliente</a></li>
+                                <li><a href="alterar_cliente.html">Alterar informações de Cliente</a></li>
                                 <li><a href="">Excluir Cliente</a></li>
                                 <li><a href="consultar_produto.html">Consultar Produto</a></li>
-                                <li><a href="">Alterar Produto</a></li>
+                                <li><a href="alterar_produto.html">Alterar Produto</a></li>
                                 <li><a href="deletar_produto.php">Exclusão de Produto</a></li>
                                 <li><a href="cadastro_produto.php">Cadastro de Produto</a></li>
                             </ul> 

@@ -6,8 +6,9 @@ codigo_usuario int not null auto_increment,
 nome varchar(60),
 email varchar(50),
 senha varchar(16),
-telefone int(13),
-primary key(codigo)
+telefone bigint(13),
+imagem varchar(100),
+primary key(codigo_usuario)
 );
 
 create table produto(
