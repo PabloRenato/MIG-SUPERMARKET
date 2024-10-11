@@ -1,3 +1,4 @@
+/* inicio do cabeçalho */
 *{margin: 0px; padding:0px;}
 
 li{
@@ -12,10 +13,12 @@ li{
 #cabeçalho ul a{
     background-color: white;
     padding: 5px;
+    color: black;
 }
 #cabeçalho ul li a{
     text-decoration: none;
     border-radius: 50px;
+    border: 2px solid #d03b3b;
 }
 #cabeçalho ul{
     padding: 10px;
@@ -44,6 +47,7 @@ li{
     border: none;
     cursor: pointer;
     padding:10px;
+    border: 2px solid #d03b3b;
     border-radius: 50px;
 }
 .menubtn:hover {
@@ -73,4 +77,73 @@ li{
 }
 .dropdown:hover .dropdown-child {
     display: block;
+}
+/* fim do cabeçalho */
+
+/* inicio */
+#banner{
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 1000px;
+    border:10px solid #b93333 ;
+}
+#prateleira{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin-top: 80px;
+    margin-bottom: 80px;
+    margin-left: 80px;
+}
+#prateleira img{
+    width: 300px;
+    border:10px solid #b93333 ;
+}
+#prateleira button{
+    width: 325px;
+    margin-bottom: 25px;
+}
+
+/* sobre */
+#sobre{
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 800px;
+}
+#historia{
+    display: block;
+    margin: 0 auto;
+    width: 1450px;
+}
+
+
+/* produtos */
+.produto{
+    margin: 10px;
+    background-color: #d03b3b;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+}
+.produto a{
+    text-decoration: none;
+}
+#prateleira1{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    margin-top: 80px;
+    margin-bottom: 80px;
+    margin-left: 80px;
+    width: 300px;
+    text-align: center;
+}
+#prateleira1 img{
+    width: 300px;
+    border:10px solid #b93333 ;
+}
+#prateleira1 button{
+    width: 300px;
+    margin-bottom: 10px;
 }
