@@ -16,8 +16,8 @@
                 </div>
                 <div id="menu">
                     <li><a href="index.html">Inicio</a></li>
-                    <li><a href="">Sobre</a></li>
-                    <li><a href="">Produtos</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="produtos.php">Produtos</a></li>
                     <li><a href="login.php">Login</a></li>
                     <li><div class="dropdown">
                         <button class="menubtn">●●●</button>
@@ -25,7 +25,7 @@
                             <ul>
                                 <li><a href="consultar_cliente.html">Consultar Cliente</a></li>
                                 <li><a href="alterar_cliente.html">Alterar informações de Cliente</a></li>
-                                <li><a href="">Excluir Cliente</a></li>
+                                <li><a href="deletar_cliente.php">Excluir Cliente</a></li>
                                 <li><a href="consultar_produto.html">Consultar Produto</a></li>
                                 <li><a href="alterar_produto.html">Alterar Produto</a></li>
                                 <li><a href="deletar_produto.php">Exclusão de Produto</a></li>
@@ -36,6 +36,7 @@
             </ul>
         </div>
     </header>
+    <h1>DELETAR PRODUTO</h1>
     <form action="" method="post">
         <label for="codigo">Insira o Código do Produto</label>
         <input type="text" name="codigo" placeholder="0">
@@ -44,21 +45,21 @@
     
     <?php
     include ("conexao.php");
+
     if(!empty($_POST['codigo'])){
-        if(isset($_POST['codigo'])){
-            $codigo=$_POST['codigo'];
-        }
+        $codigo=$_POST['codigo'];
+    }else{
+        echo "Insira o Código do Produto";
+    }
+    if(!empty($_POST['codigo'])){
         $query="DELETE FROM produto WHERE codigo_produto=($codigo)";
-        if(empty($codigo)){
-            echo "Insira o Código do Produto";
-            }else{
-            if(mysqli_query($conexao,$query)){
-                echo "<h2> Produto Excluido com Sucesso";
-            }else{
-                echo "Erro".mysqli_error($conexao);
-            }
+        if(mysqli_query($conexao,$query)){
+            echo "<h2> Produto Excluido com Sucesso </h2>";
+        }else{
+             echo "Erro".mysqli_error($conexao);
         }
     }
+    
 
 
     ?>

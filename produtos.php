@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina Inicial</title>
+    <title>Produtos</title>
     <link rel="stylesheet" href="CSS/index.css">
 </head>
 <body>
-    <header>
+<header>
         <div id="cabeçalho">
             <ul>
                 <div id="logo">
@@ -36,14 +36,32 @@
             </ul>
         </div>
     </header>
-    <center><h1>MIG SUPERMARKET</h1></center>
-    <img id="banner" src="img/banner_mig_supermarket.jpg" alt="">
-    <h3></h3>
-    <div id="prateleira">
-        <button><a href="produtos.php"><img src="img/promocao1.jpg" alt=""></a></button>
-        <button><a href="produtos.php"><img src="img/promocao2.jpg" alt=""></a></button>
-        <button><a href="produtos.php"><img src="img/promocao3.jpg" alt=""></a></button>
-        <button><a href="produtos.php"><img src="img/promocao4.jpg" alt=""></a></button>
+    <?php
+    include("conexao.php");
+    $query="SELECT * FROM produto";
+    $resultado_produto=mysqli_query($conexao,$query);
+    echo "    <center><h1>PRODUTOS</h1></center>";
+    echo "<div id='prateleira1'>";
+    //Execução do Query
+    if(mysqli_query($conexao,$query)){
+        //Imprimir até encontrar o respectivo nome e ter funcionado o Query
+        while($row_produto=mysqli_fetch_assoc($resultado_produto)){
+            $nome=$row_produto['nome_produto'];
+            $preco=$row_produto['preco_produto'];
+            $imagem=$row_produto['imagem'];            
+            echo "
+        <div class='produto'>
+            <img src= $imagem alt=''>
+            <h3> $nome </h3>
+            <h3> R$$preco</h3>
+            <button><a href='solicitado.html'>SOLICITAR COMPRA</a></button>
+        </div>";
+        }
+    }else{
+        echo "Erro.".mysqli_error($conexao); 
+    }
+    echo "</div>";
+    ?>
 
 </body>
 </html>

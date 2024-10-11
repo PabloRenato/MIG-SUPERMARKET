@@ -16,8 +16,8 @@
                 </div>
                 <div id="menu">
                     <li><a href="index.html">Inicio</a></li>
-                    <li><a href="">Sobre</a></li>
-                    <li><a href="">Produtos</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="produtos.php">Produtos</a></li>
                     <li><a href="login.php">Login</a></li>
                     <li><div class="dropdown">
                         <button class="menubtn">●●●</button>
@@ -25,7 +25,7 @@
                             <ul>
                                 <li><a href="consultar_cliente.html">Consultar Cliente</a></li>
                                 <li><a href="alterar_cliente.html">Alterar informações de Cliente</a></li>
-                                <li><a href="">Excluir Cliente</a></li>
+                                <li><a href="deletar_cliente.php">Excluir Cliente</a></li>
                                 <li><a href="consultar_produto.html">Consultar Produto</a></li>
                                 <li><a href="alterar_produto.html">Alterar Produto</a></li>
                                 <li><a href="deletar_produto.php">Exclusão de Produto</a></li>
@@ -42,19 +42,24 @@
         $nome=$_POST['nome'];
         $preco=$_POST['preco'];
         $codigo=$_POST['codigo'];
-        $imagem="./img/".$_FILES['imagem']['name'];
-        move_uploaded_file($_FILES['imagem']['tmp_name'],$imagem);
+        if (empty($nome) || empty($preco) || empty($_FILES['imagem']['name'])) {
+            echo "Por favor, preencha todos os campos e envie uma imagem.";
+        } else {
+            $imagem = "./img/" . $_FILES['imagem']['name'];
+            move_uploaded_file($_FILES['imagem']['tmp_name'], $imagem);
+        
     
-        //Variavel de Alteração
-        $alterar="UPDATE  produto SET nome_produto='{$nome}', preco_produto='{$preco}', imagem='{$imagem}' WHERE codigo_produto='{$codigo}'";
-    
-        $operacao_alterar=mysqli_query($conexao,$alterar);
-    
-        if(!$operacao_alterar){
-            echo "Error:".mysqli_error($conexao);
-        }else{
-           // header('location:alteracao.html');
-            echo "Alteração Realizada com Sucesso";
+            //Variavel de Alteração
+            $alterar="UPDATE  produto SET nome_produto='{$nome}', preco_produto='{$preco}', imagem='{$imagem}' WHERE codigo_produto='{$codigo}'";
+        
+            $operacao_alterar=mysqli_query($conexao,$alterar);
+        
+            if(!$operacao_alterar){
+                echo "Error:".mysqli_error($conexao);
+            }else{
+            // header('location:alteracao.html');
+                echo "Alteração Realizada com Sucesso";
+            }
         }
     }
 
@@ -85,11 +90,12 @@
         <label for="preco">Preço do Produto</label>
         <input type="text" value="<?php echo $info_produto['preco_produto']?>" name="preco"><br>
         <label for="imagem">Imagem</label><br>
-        <?php echo "<img src='$info_produto[imagem]' width='100' height='100'";?><br>
+        <?php echo "<img src='$info_produto[imagem]' width='150' height='150'";?><br>
         <input type="file" name="imagem" accept="image/*">
         <input type="hidden" value="<?php echo $info_produto['codigo_produto']?>" name="codigo"><br>
 
         <input type="submit" name="submit" value="Alterar">
+        <button><a href="alterar_produto.html">Voltar</a></button>
     </form>
 </body>
 </html>

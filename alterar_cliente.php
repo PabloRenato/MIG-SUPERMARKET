@@ -16,8 +16,8 @@
                 </div>
                 <div id="menu">
                 <li><a href="index.html">Inicio</a></li>
-                    <li><a href="">Sobre</a></li>
-                    <li><a href="">Produtos</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="produtos.php">Produtos</a></li>
                     <li><a href="login.php">Login</a></li>
                     <li><div class="dropdown">
                         <button class="menubtn">●●●</button>
@@ -25,7 +25,7 @@
                             <ul>
                                 <li><a href="consultar_cliente.html">Consultar Cliente</a></li>
                                 <li><a href="alterar_cliente.html">Alterar informações de Cliente</a></li>
-                                <li><a href="">Excluir Cliente</a></li>
+                                <li><a href="deletar_cliente.php">Excluir Cliente</a></li>
                                 <li><a href="consultar_produto.html">Consultar Produto</a></li>
                                 <li><a href="alterar_produto.html">Alterar Produto</a></li>
                                 <li><a href="deletar_produto.php">Exclusão de Produto</a></li>
@@ -93,6 +93,7 @@
             <input type="hidden" value="<?php echo $info_usuario['codigo_usuario']?>" name="codigo"><br>
     
             <input type="submit" name="submit" value="Alterar">
+            <button><a href="alterar_cliente.html">Voltar</a></button>
         </form>
 </body>
 </html>

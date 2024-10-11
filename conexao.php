@@ -13,7 +13,7 @@ $conexao=mysqli_connect($host,$usuario,$senha,$dbname);
 if($conexao->connect_error){
     echo "Erro". mysqli_error($conexao); //se ocorrer erro na conexao
 }else{
-    echo "Conexão realizada com sucesso.<br>";
+    echo "Conectado.<br>";
     //header('Location: index.html');
 }
 

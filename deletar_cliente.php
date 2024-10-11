@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina Inicial</title>
+    <title>Deletar Cliente PHP</title>
     <link rel="stylesheet" href="CSS/index.css">
 </head>
 <body>
@@ -36,14 +36,33 @@
             </ul>
         </div>
     </header>
-    <center><h1>MIG SUPERMARKET</h1></center>
-    <img id="banner" src="img/banner_mig_supermarket.jpg" alt="">
-    <h3></h3>
-    <div id="prateleira">
-        <button><a href="produtos.php"><img src="img/promocao1.jpg" alt=""></a></button>
-        <button><a href="produtos.php"><img src="img/promocao2.jpg" alt=""></a></button>
-        <button><a href="produtos.php"><img src="img/promocao3.jpg" alt=""></a></button>
-        <button><a href="produtos.php"><img src="img/promocao4.jpg" alt=""></a></button>
+    <h1>DELETAR CLIENTE</h1>
+    <form action="" method="post">
+        <label for="codigo">Insira o Código do Cliente</label>
+        <input type="text" name="codigo" placeholder="0">
+        <input type="submit" name="submit" placeholder="Enviar">
+    </form>
+    
+    <?php
+    include ("conexao.php");
+    if(!empty($_POST['codigo'])){
+        if(isset($_POST['codigo'])){
+            $codigo=$_POST['codigo'];
+        }
+        $query="DELETE FROM usuario WHERE codigo_usuario=($codigo)";
+        if(empty($codigo)){
+            echo "Insira o Código do Cliente";
+            }else{
+            if(mysqli_query($conexao,$query)){
+                echo "<h2> Cliente Excluido com Sucesso";
+            }else{
+                echo "Erro".mysqli_error($conexao);
+            }
+        }
+    }
+
+
+    ?>
 
 </body>
 </html>
