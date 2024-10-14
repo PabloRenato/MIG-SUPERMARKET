@@ -60,15 +60,18 @@
         
 
     ?>
-
-    <h1>LOGIN</h1>
-    <form action="" method="post">
-        <label for="email">Email</label>
-        <input type="email" name="email">
-        <label for="senha">Senha</label>
-        <input type="password" name="senha">
-        <input type="submit" name="submit" value="ENTRAR"><br>
-        <button><a href="cadastro_usuario.php">Criar uma conta</a></button>
-    </form>
+    <div id="caixa">
+        <div id="login">
+            <center><h1>LOGIN</h1></center><br>
+            <form action="" method="post">
+                <label for="email">Email</label>
+                <input type="email" name="email"><br><br>
+                <label for="senha">Senha</label>
+                <input type="password" name="senha"><br><br>
+                <input type="submit" name="submit" value="ENTRAR"><br><br>
+                <button><a href="cadastro_usuario.php">Criar uma conta</a></button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

@@ -62,19 +62,22 @@
             }
         }
     ?>
-
-    <h1>CRIAR CONTA</h1>
-    <form action="" method="post">
-        <label for="nome">Nome</label>
-        <input type="text" name="nome"><br>
-        <label for="email">Email</label>
-        <input type="text" name="email"><br>
-        <label for="senha">Senha</label>
-        <input type="password" name="senha" placeholder="Máximo 16 Caracteres"><br>
-        <label for="telefone">Telefone</label>
-        <input type="text" name="telefone" placeholder="Apenas Números"><br>
-        <input type="submit" name="submit" value="CADASTRAR">
-    </form>
+    <div id="caixa1">
+        <div id="cadastro">
+            <h1>CRIAR CONTA</h1><br>
+            <form action="" method="post">
+                <label for="nome">Nome</label><br>
+                <input type="text" name="nome"><br><br>
+                <label for="email">Email</label><br>
+                <input type="text" name="email"><br><br>
+                <label for="senha">Senha</label><br>
+                <input type="password" name="senha" placeholder="Máximo 16 Caracteres"><br><br>
+                <label for="telefone">Telefone</label><br>
+                <input type="text" name="telefone" placeholder="Apenas Números"><br><br>
+                <input type="submit" name="submit" value="CADASTRAR">
+            </form>
+        </div>
+    </div>
 
 </body>
 </html>
