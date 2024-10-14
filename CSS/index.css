@@ -109,12 +109,16 @@ li{
     display: block;
     margin: 0 auto;
     margin-top: 20px;
+    margin-bottom: 10px;
+    border: 10px solid #b93333;
     width: 800px;
 }
 #historia{
     display: block;
     margin: 0 auto;
     width: 1450px;
+    background-color: #c9c9c9;
+    border: 10px solid #d03b3b;
 }
 
 
@@ -146,4 +150,100 @@ li{
 #prateleira1 button{
     width: 300px;
     margin-bottom: 10px;
+}
+
+/* login */
+#caixa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 180px;
+    width: 250px;
+    border-radius: 10px;
+    background-color: #b93333;
+}
+#login{
+    background-color: #c9c9c9;
+    padding: 20px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+#login input[type="submit"]{
+    margin-left: 55px;
+    font-size: 20px;
+    height: 4vh;
+    width: 10vh;
+}
+#login input{
+    margin-left: 20px;
+    height: 2vh;
+    border-radius: 5px;
+}
+#login label{
+    margin-left: 20px;
+}
+#login button{
+    margin-left: 54px;
+    border-radius: 5px;
+}
+#login button a{
+    text-decoration: none;
+}
+
+/* cadastro */
+#caixa1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 180px;
+    width: 280px;
+    border-radius: 10px;
+    background-color: #b93333;
+}
+#cadastro{
+    background-color: #c9c9c9;
+    padding: 20px;
+    padding-bottom: 15px;
+    border-radius: 10px;
+}
+#cadastro input[type="submit"]{
+    margin-left: 45px;
+    font-size: 20px;
+    height: 4vh;
+    width: 15vh;
+}
+#cadastro input{
+    margin-left: 25px;
+    height: 2vh;
+    border-radius: 5px;
+}
+#cadastro label{
+    margin-left: 25px;
+}
+#cadastro button{
+    margin-left: 54px;
+}
+#cadastro button a{
+    text-decoration: none;
+}
+
+/* consultar cliente*/
+#caixa2{
+    display: flex;
+    padding: 10px;
+    width: 350px;
+    border-radius: 10px;
+    margin-left: 3vh;
+    background-color: #b93333;
+}
+#consultar{
+    background-color: #c9c9c9;
+    padding: 20px;
+    padding-bottom: 10px;
+    width: 310px;
+    border-radius: 10px;
 }
