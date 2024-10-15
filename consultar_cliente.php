@@ -38,13 +38,18 @@
     </header>
     <?php
         include ("conexao.php");
-
-        $email=$_POST['email'];
-        $query="SELECT * FROM usuario WHERE email LIKE '%$email%'";
+        $codigo="Não existe";
+        $nome="Não existe";
+        $email="Não existe";
+        $telefone="Não existe";
+        $senha="Não existe";
+        
+        $Email=$_POST['email'];
+        $query="SELECT * FROM usuario WHERE email LIKE '%$Email%'";
         $resultado=mysqli_query($conexao,$query);
         if(mysqli_query($conexao,$query)){
             while($row_usuario=mysqli_fetch_assoc($resultado)){
-                if(empty($email)){
+                if(empty($Email)){
                     echo "Insira o Email do Cliente";
                     echo "<a href=consultar_cliente.html> Voltar a Consulta </a>";
                 }else{
@@ -58,6 +63,7 @@
         }else{
             echo "Erro ".mysqli_error($conexao);
         }
+        
     ?>
     <h1>INFORMAÇÕES DO CLIENTE</h1>
     <label for="codigo">CODIGO</label>
